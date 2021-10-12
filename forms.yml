@@ -1,0 +1,5 @@
+forms:
+  symptoms_form:
+    required_slots:
+      symptom:
+        - type: from_text

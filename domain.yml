@@ -1,0 +1,47 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- mood_ill:
+    use_entities: true
+- give_symptom:
+    use_entities: true
+entities:
+- symptom
+slots:
+  symptom:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_ask_for_symptom_info:
+  - text: Hello! Could you please provide your symptom?
+  utter_acknowledge_provided_symptom:
+  - text: Thanks for providing your symptom {symptom}!
+actions:
+- validate_symptom
+- action_say_symptom
+forms:
+  symptoms_form:
+    required_slots:
+      symptom:
+      - type: from_text
+e2e_actions: []

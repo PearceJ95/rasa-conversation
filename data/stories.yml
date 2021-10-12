@@ -1,0 +1,12 @@
+version: "2.0"
+
+stories:
+
+- story: user supplies customer symptom
+  steps:
+  - intent: greet
+  - action: utter_ask_for_symptom_info
+  - intent: give_symptom
+    entities:
+      - symptom
+  - action: utter_acknowledge_provided_symptom

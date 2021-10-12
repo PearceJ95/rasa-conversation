@@ -1,0 +1,17 @@
+version: "2.0"
+
+rules:
+
+#- rule: Activate Symptom Form
+#  steps:
+#  - intent: mood_ill
+#  - action: symptoms_form
+#  - active_loop: symptoms_form
+#
+#- rule: Close Symptom Form
+#  condition:
+#    - active_loop: symptoms_form
+#  steps:
+#  - action: symptoms_form
+#  - active_loop: null
+#  - action: utter_sounds_bad
